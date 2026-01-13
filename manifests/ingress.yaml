@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: azure-application-gateway
   rules:
-  - host: ui.my-app-gateway.shop
+  - host: ui.frontendapp.site
     http:
       paths:
       - pathType: Prefix
