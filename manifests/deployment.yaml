@@ -2,6 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: todo-ui
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: todo-ui=acrdevfronttodoapp01.azurecr.io/todo-ui
+    argocd-image-updater.argoproj.io/todo-ui.update-strategy: newest-build
+    argocd-image-updater.argoproj.io/write-back-method: git
 spec:
   replicas: 3
   selector:
@@ -14,6 +18,7 @@ spec:
     spec:
       containers:
       - name: todo-ui
-        image: acrdevfronttodoapp01.azurecr.io/todo-ui:v5
+        image: acrdevfronttodoapp01.azurecr.io/todo-ui:initial
         ports:
         - containerPort: 80
+
