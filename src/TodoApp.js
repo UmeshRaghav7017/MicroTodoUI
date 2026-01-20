@@ -72,7 +72,7 @@ function TodoApp() {
                     }}
                 >
                    <img src="" alt="My Logo" />
-                    ToDo App
+                    // ToDo App
                 </Typography>
                 <div>
                     <TextField
