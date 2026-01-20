@@ -4,12 +4,6 @@ metadata:
   name: todo-ui
   labels:
     app: todo-ui
-  annotations:
-    # Argo CD Image Updater config
-    argocd-image-updater.argoproj.io/image-list: todo-ui=acrdevfronttodoapp01.azurecr.io/todo-ui
-    argocd-image-updater.argoproj.io/todo-ui.update-strategy: newest-build
-    argocd-image-updater.argoproj.io/todo-ui.allow-tags: regexp:^[a-f0-9]{7}$
-    argocd-image-updater.argoproj.io/write-back-method: git
 spec:
   replicas: 3
   selector:
@@ -22,7 +16,6 @@ spec:
     spec:
       containers:
         - name: todo-ui
-          # 🔴 IMPORTANT: initial SHA tag (one-time)
           image: acrdevfronttodoapp01.azurecr.io/todo-ui:e3b36ea
           imagePullPolicy: Always
           ports:
