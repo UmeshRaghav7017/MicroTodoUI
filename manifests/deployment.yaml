@@ -2,7 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: todo-ui
+  labels:
+    app: todo-ui
   annotations:
+    # Argo CD Image Updater config
     argocd-image-updater.argoproj.io/image-list: todo-ui=acrdevfronttodoapp01.azurecr.io/todo-ui
     argocd-image-updater.argoproj.io/todo-ui.update-strategy: newest-build
     argocd-image-updater.argoproj.io/todo-ui.allow-tags: regexp:^[a-f0-9]{7}$
@@ -18,8 +21,9 @@ spec:
         app: todo-ui
     spec:
       containers:
-      - name: todo-ui
-        image: acrdevfronttodoapp01.azurecr.io/todo-ui
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 80
+        - name: todo-ui
+          # 🔴 IMPORTANT: initial SHA tag (one-time)
+          image: acrdevfronttodoapp01.azurecr.io/todo-ui:e3b36ea
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
