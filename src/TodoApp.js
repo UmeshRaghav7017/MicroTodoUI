@@ -71,7 +71,7 @@ function TodoApp() {
                         margin: '8px',
                     }}
                 >
-                   <img src="" alt="My Logo" />
+                   //<img src="" alt="My Logo" />
                     // ToDo App
                 </Typography>
                 <div>
