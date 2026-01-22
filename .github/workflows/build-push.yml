@@ -55,3 +55,7 @@ jobs:
       - name: Push Docker Image to ACR
         run: |
           docker push $ACR_LOGIN_SERVER/$IMAGE_NAME:$IMAGE_TAG
+
+      - name: Replace Image tag in manifest
+        run: |
+          sed -i "s|Image_tag|${IMAGE_TAG}|g" manifests/deployment.yaml    
