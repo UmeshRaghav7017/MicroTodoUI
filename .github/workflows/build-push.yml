@@ -58,7 +58,7 @@ jobs:
 
       - name: Replace Image tag in manifest
         run: |
-          cp -f deployment-template.yaml manifest/deployment.yaml
+          cp -f deployment-template.yaml manifests/deployment.yaml
           sed -i "s|Image_tag|${IMAGE_TAG}|g" manifests/deployment.yaml 
           
 
