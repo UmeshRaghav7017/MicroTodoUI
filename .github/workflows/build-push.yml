@@ -58,4 +58,29 @@ jobs:
 
       - name: Replace Image tag in manifest
         run: |
-          sed -i "s|Image_tag|${IMAGE_TAG}|g" manifests/deployment.yaml    
+          sed -i "s|Image_tag|${IMAGE_TAG}|g" manifests/deployment.yaml  
+
+      - name: Commit and push changes
+
+        run: |
+
+          git config user.name "UmeshRaghav7017"
+
+          git config user.email "raghavumesh066@gmail.com"
+ 
+          git status
+ 
+          if git diff --quiet; then
+
+          echo "No changes to commit"
+
+          else
+
+          git add manifests/deployment.yaml
+
+          git commit -m "chore: update image tag to ${IMAGE_TAG}"
+
+          git push origin main
+
+          fi
+ 
