@@ -7,7 +7,7 @@ import config from './config'; // Import the config file with environment variab
 
 // Use the config to define API URLs
 const GET_TASKS_API_BASE_URL = "http://dev-get-tasks-api.jhandu.shop";
-//const DELETE_TASK_API_BASE_URL = "http://dev-delete-task-api.jhandu.shop";
+const DELETE_TASK_API_BASE_URL = "http://dev-delete-task-api.jhandu.shop";
 const CREATE_TASK_API_BASE_URL = "http://add-task-api.frontendapp.site";
 
 //Update Task Functionality is Work In Progress
