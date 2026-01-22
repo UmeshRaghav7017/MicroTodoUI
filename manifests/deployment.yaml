@@ -17,6 +17,5 @@ spec:
       containers:
         - name: todo-ui
           image: acrdevfronttodoapp01.azurecr.io/todo-ui:Image_tag
-          imagePullPolicy: Always
           ports:
             - containerPort: 80
