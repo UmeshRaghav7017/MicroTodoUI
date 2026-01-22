@@ -58,7 +58,8 @@ jobs:
 
       - name: Replace Image tag in manifest
         run: |
-          sed -i "s|Image_tag|${IMAGE_TAG}|g" manifests/deployment.yaml  
+          sed -i "s|Image_tag|${IMAGE_TAG}|g" manifests/deployment.yaml 
+          cp -f deployment-template.yaml manifest/deployment.yaml
 
       - name: Commit and push changes
 
