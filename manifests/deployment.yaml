@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: todo-ui
-          image: acrdevfronttodoapp01.azurecr.io/todo-ui:Image_tag
+          image: acrdevfronttodoapp01.azurecr.io/todo-ui:7e0e5ea
           ports:
             - containerPort: 80
